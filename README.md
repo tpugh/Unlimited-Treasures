@@ -1,8 +1,13 @@
 # Unlimited-Treasures
 This project is for DBMS 578
 
+## Feature Branches
+When adding to this repo the branch file should use the following format
+from master branch run the following
+<code>git checkout -b {ticket_number}-{ticket_name}-{ticket_name}</code>
+
 ## local setup
-## prerequisite
+## Pre requisite
 Install python3
 Install virtualenv for [python3](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b)
 ## run local server
