@@ -11,9 +11,10 @@ source secret.txt file ( this file is one line and should have the following:
 <code>exprot SECRET_KEY='{your key here}'</code>
 2. Activate virtual env 
 <code> source venv/bin/activate</code>
-3.git clone Unlimited-Treasures repo and cd into the repo dir
+
+3. git clone Unlimited-Treasures repo and cd into the repo dir
 4. <code> pip3 install -r requirements.txt </code>
 the above command will install all of the needed packages to run your app locally
 5. cd to mysite folder
-6.python3 manage.py runserver
+6. python3 manage.py runserver
 Run <code>python3 manage.py runserver</code>
