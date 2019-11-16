@@ -13,7 +13,7 @@ Install virtualenv for [python3](https://gist.github.com/Geoyi/d9fab4f609e9f7594
 ## run local server
 1. set SECRET_KEY in the base.py or secret.txt file (this file is in gitignore and will not be in version control) 
 source secret.txt file ( this file is one line and should have the following:
-<code>exprot SECRET_KEY='{your key here}'</code>
+<code>export SECRET_KEY='{your key here}'</code>
 2. Activate virtual env 
 <code> source venv/bin/activate</code>
 
