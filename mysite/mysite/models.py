@@ -30,7 +30,9 @@ class Product(models.Model):
     product_id = models.CharField(max_length=200, primary_key=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     product_name = models.CharField(max_length=200)
-    description = models.CharField(max_length=500)  
+    description = models.CharField(max_length=500)
+    image = models.ImageField(upload_to='products')
+ 
 
 class Cart(models.Model):
     cart_id = models.CharField(max_length=100, primary_key=True)
