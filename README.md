@@ -23,3 +23,6 @@ the above command will install all of the needed packages to run your app locall
 5. cd to mysite folder
 6. python3 manage.py runserver
 Run <code>python3 manage.py runserver</code>
+7. Create mysql database and tables
+    -  python manage.py makemigrations mysite
+    -  python manage.py migrate
