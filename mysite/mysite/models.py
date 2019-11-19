@@ -25,7 +25,8 @@ class OnlineStore(models.Model):
     web_address = models.CharField(max_length=200, primary_key=True) 
     email = models.CharField(max_length=200)
 
-class Products(models.Model):
+
+class Product(models.Model):
     product_id = models.CharField(max_length=200, primary_key=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     product_name = models.CharField(max_length=200)
@@ -40,5 +41,5 @@ class Payment(models.Model):
     cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE)
     email = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
-class Orders(models.Model):
+class Order(models.Model):
     cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE)
