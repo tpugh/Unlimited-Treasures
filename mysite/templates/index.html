@@ -2,6 +2,11 @@
 {% load static %}
 {% block content %}
 <!--Insert all of the page specific content here-->
+{% for product in all_products %}
+{{ product.product_name }}
+<img src="{{ product.image.url }}" height="100" width="100">
+{{ product.price}}
+{% endfor %}
 
 <!--    
                 {% for product in all_products %}
@@ -10,7 +15,8 @@
                 {{ product.price}}
                         <img src="{{ product.image }}">
                 {% endfor %}
-                {% endblock %}
+               
 -->
                 
     
+{% endblock %}

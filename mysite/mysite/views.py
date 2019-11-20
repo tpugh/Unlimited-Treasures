@@ -10,19 +10,3 @@ def index(request):
 
     }
     return render(request, 'index.html', context=context) 
-
-
-
-    
-
-"""
-def showvideo(request):
- 
-    allvideos= Video.objects.all()
-    
-    context= {'allvideos': allvideos}
-
-        
-    return render(request, 'Blog/home.html', context)
-
-"""
