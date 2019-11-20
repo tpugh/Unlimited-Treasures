@@ -3,10 +3,20 @@
 {% block content %}
 <!--Insert all of the page specific content here-->
 {% for product in all_products %}
-{{ product.product_name }}
-<img src="{{ product.image.url }}" height="100" width="100">
-{{ product.price}}
+<div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                   {{ product.product_name }} <br> 
+                   <img src="{{ product.image.url }}" height="100" width="100"><br> 
+{{ product.price}}<br> 
+                  </div>
+              </div>
+</div>
 {% endfor %}
+
+
+
+
 
 <!--    
                 {% for product in all_products %}
