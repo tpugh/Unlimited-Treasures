@@ -31,7 +31,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     product_name = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='products')
+    image = models.ImageField(upload_to='media',default='default.jpg')
  
 
 class Cart(models.Model):
