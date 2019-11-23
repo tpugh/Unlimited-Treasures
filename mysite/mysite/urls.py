@@ -21,6 +21,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('ProductSearch', views.catalogView.as_view(), name ='Product Search'),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -10,3 +10,9 @@ def index(request):
 
     }
     return render(request, 'index.html', context=context) 
+class catalogView(generic.ListView):
+    """View function for items in the catlog"""
+    model = Product
+    
+
+    
