@@ -37,9 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'bootstrap4',
     'crispy_forms',
     'mysite',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount'
+    #'mysite.templatetags.cart_template_tags'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +136,11 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # Media URL
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'

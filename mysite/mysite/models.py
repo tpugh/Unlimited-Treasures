@@ -18,13 +18,12 @@ from django.db.models import Sum
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 
-
 """ Add on Choices """
 
 CATEGORY_CHOICES = (
-    ('S', 'Shirt'),
-    ('SW', 'Sport wear'),
-    ('OW', 'Outwear')
+    ('C', 'Chips'),
+    ('P', 'Pillow'),
+    ('PP', 'Party Pack')
 )
 
 LABEL_CHOICES = (
@@ -102,17 +101,17 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:product", kwargs={
+        return reverse("product", kwargs={
             'slug': self.slug
         })
 
     def get_add_to_cart_url(self):
-        return reverse("core:add-to-cart", kwargs={
+        return reverse("add-to-cart", kwargs={
             'slug': self.slug
         })
 
     def get_remove_from_cart_url(self):
-        return reverse("core:remove-from-cart", kwargs={
+        return reverse("remove-from-cart", kwargs={
             'slug': self.slug
         })
 
@@ -144,11 +143,11 @@ class OrderItem(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE)
+                             on_delete=models.CASCADE, null=True)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem)
-    start_date = models.DateTimeField(auto_now_add=True)
-    ordered_date = models.DateTimeField()
+    start_date = models.DateTimeField(auto_now_add=True, null=True)
+    ordered_date = models.DateTimeField(null= True)
     ordered = models.BooleanField(default=False)
     shipping_address = models.ForeignKey(
         'Address', related_name='shipping_address', on_delete=models.SET_NULL, blank=True, null=True)
@@ -202,17 +201,17 @@ class Address(models.Model):
     class Meta:
         verbose_name_plural = 'Addresses'
 
-
+"""
 class Payment(models.Model):
-    stripe_charge_id = models.CharField(max_length=50)
+    #stripe_charge_id = models.CharField(max_length=50, default='empty')
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.SET_NULL, blank=True, null=True)
-    amount = models.FloatField()
-    timestamp = models.DateTimeField(auto_now_add=True)
+    amount = models.FloatField(null=True)
+    timestamp = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.user.username
-
+"""
 
 class Coupon(models.Model):
     code = models.CharField(max_length=15)

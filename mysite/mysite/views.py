@@ -358,7 +358,7 @@ class PaymentView(View):
 class HomeView(ListView):
     model = Item
     paginate_by = 10
-    template_name = "home.html"
+    template_name = "home2.html"
 
 
 class OrderSummaryView(LoginRequiredMixin, View):
@@ -526,3 +526,15 @@ class RequestRefundView(View):
             except ObjectDoesNotExist:
                 messages.info(self.request, "This order does not exist.")
                 return redirect("core:request-refund")
+
+class OrderSummaryView(LoginRequiredMixin, View):
+    def get(self, *args, **kwargs):
+        try:
+            order = Order.objects.get(user=self.request.user, ordered=False)
+            context = {
+                'object': order
+            }
+            return render(self.request, 'order_summary.html', context)
+        except ObjectDoesNotExist:
+            messages.warning(self.request, "You do not have an active order")
+            return redirect("/")
