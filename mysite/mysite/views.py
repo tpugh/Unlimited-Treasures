@@ -16,10 +16,6 @@ import string
 """ Will use test data input, not strip for purchase function"""
 #import stripe
 #stripe.api_key = settings.STRIPE_SECRET_KEY
-class Index(View):
-    template = 'index.html'
-    def get(self, request):
-        return render(request, self.template)
 
 def index(request):
     """View function for home page of site"""

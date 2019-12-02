@@ -88,4 +88,3 @@ local_settings.py
 .env
 db.sqlite3
 base.py
-mysite/media/Nuke_simpsonII.jpg
