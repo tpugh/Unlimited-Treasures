@@ -13,9 +13,9 @@ from django_countries.widgets import CountrySelectWidget
 
 
 PAYMENT_CHOICES = (
-    ('S', 'Stripe'),
-    ('P', 'PayPal')
-    #('C', 'Credit')
+    #('S', 'Stripe'),
+    #('P', 'PayPal')
+    ('C', 'Credit')
 )
 
 
