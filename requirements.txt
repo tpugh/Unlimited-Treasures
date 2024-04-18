@@ -3,7 +3,7 @@ dj-database-url==0.5.0
 Django==2.2.7
 django-bootstrap4==1.0.1
 django-crispy-forms==1.8.0
-gunicorn==19.9.0
+gunicorn==22.0.0
 mysqlclient==1.4.5
 pytz==2019.3
 soupsieve==1.9.5
