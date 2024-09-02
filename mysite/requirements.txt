@@ -8,7 +8,7 @@ django-allauth==0.40.0
 django-bootstrap4==1.0.1
 django-countries==5.5
 django-crispy-forms==1.8.0
-gunicorn==19.9.0
+gunicorn==21.2.0
 idna==2.8
 mysqlclient==1.4.5
 oauthlib==3.1.0
